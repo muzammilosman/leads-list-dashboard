@@ -7,21 +7,29 @@ import Maps from "views/Maps.js";
 import Notifications from "views/Notifications.js";
 import Leads from "views/Leads";
 import Dealers from "views/Dealers";
+import { LeadDetails } from "views/LeadDetails";
 
 const dashboardRoutes = [
   {
     path: "/leads",
     name: "Leads",
-    icon: "nc-icon nc-paper-2",
+    icon: "nc-icon nc-bag",
     component: Leads,
     layout: "/admin",
+    children: [
+      {
+        path: "/details",
+        component: LeadDetails
+      }
+    ]
   },
   {
     path: "/dealers",
     name: "Dealers",
     icon: "nc-icon nc-paper-2",
     component: Dealers,
-    layout: "/admin"
+    layout: "/admin",
+    children: []
   },
   {
     path: "/dashboard",
@@ -29,6 +37,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
     layout: "/admin",
+    children: []
   },
   {
     path: "/user",
@@ -36,6 +45,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-circle-09",
     component: UserProfile,
     layout: "/admin",
+    children: []
   },
   {
     path: "/table",
@@ -43,6 +53,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-notes",
     component: TableList,
     layout: "/admin",
+    children: []
   },
   {
     path: "/typography",
@@ -50,6 +61,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-paper-2",
     component: Typography,
     layout: "/admin",
+    children: []
   },
   {
     path: "/icons",
@@ -57,6 +69,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-atom",
     component: Icons,
     layout: "/admin",
+    children: []
   },
   {
     path: "/maps",
@@ -64,6 +77,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-pin-3",
     component: Maps,
     layout: "/admin",
+    children: []
   },
   {
     path: "/notifications",
@@ -71,6 +85,7 @@ const dashboardRoutes = [
     icon: "nc-icon nc-bell-55",
     component: Notifications,
     layout: "/admin",
+    children: []
   },
 ];
 

@@ -19,7 +19,7 @@ function Admin() {
     const myroutes = routes.map((prop, key) => {
       const RenderComp = prop.component
       return (
-        <Route path={prop.path} element={<RenderComp />} key={key} />
+        <Route path={prop.children?.length > 0 ? `${prop.path}/*` : prop.path} element={<RenderComp />} key={key} />
       );
     });
     return myroutes
@@ -46,7 +46,7 @@ function Admin() {
           <div className="content">
             <Routes>{getRoutes(routes)}</Routes>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>
